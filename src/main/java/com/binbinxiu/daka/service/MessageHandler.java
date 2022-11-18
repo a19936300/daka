@@ -2,6 +2,10 @@ package com.binbinxiu.daka.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.binbinxiu.daka.service.msg.ChainMessageHandlerFactory;
+import com.binbinxiu.daka.service.msg.RenWuHandler;
+
 import weixin.popular.bean.message.EventMessage;
 
 /**
@@ -18,6 +22,8 @@ public class MessageHandler {
 
     public  String handler(EventMessage eventMessage){
         String content = eventMessage.getContent();
+        //RenWuHandler renWuHandler = ChainMessageHandlerFactory.build();
+        //renWuHandler.requestHandler(content);
         if(content.contains("=")){
             tRenWuService.receiveRenWu(content);
             return "记录成功 \n"+tRenWuService.renWuSum();
