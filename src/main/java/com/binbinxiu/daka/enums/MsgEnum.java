@@ -13,9 +13,9 @@ public enum MsgEnum {
     }
 
     public static String getName(String value){
-        for (RenWuTypeEnum renWuTypeEnum : values()) {
-            if(renWuTypeEnum.value.equals(value)){
-                return renWuTypeEnum.name;
+        for (MsgEnum msgEnum : values()) {
+            if(msgEnum.value.equals(value)){
+                return msgEnum.name;
             }
         }
         return value;

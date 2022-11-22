@@ -2,7 +2,6 @@ package com.binbinxiu.daka;
 
 import cn.hutool.core.util.StrUtil;
 import com.binbinxiu.daka.service.MessageHandler;
-import com.binbinxiu.daka.service.TRenWuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,10 +29,6 @@ public class ReceiveServlet {
     @Autowired
     private MessageHandler messageHandler;
 
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
     //重复通知过滤
     private static ExpireKey expireKey = new DefaultExpireKey();
     //从官方获取

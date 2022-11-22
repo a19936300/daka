@@ -8,7 +8,7 @@ public abstract class Handler<T> {
     }
     
     public void requestHandler(T msg){
-        if(!canRequest(t)){
+        if(!canRequest(msg)){
             if(this.next != null){
                 this.next.requestHandler(msg);
             }
